@@ -1279,6 +1279,7 @@
             btnScan.TabIndex = 1;
             btnScan.Text = "Scan";
             btnScan.UseVisualStyleBackColor = true;
+            btnScan.Click += btnScan_Click;
             // 
             // lblStatusMsg
             // 

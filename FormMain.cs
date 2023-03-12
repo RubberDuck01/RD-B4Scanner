@@ -6,6 +6,8 @@ namespace RDB4Scanner {
             InitializeComponent();
         }
 
+        private string loadedLogPath;
+
         // opens github repo in default browser:
         private void lblGitLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             string gitUrl = "https://github.com/RubberDuck01/RDB4Scanner";
@@ -25,6 +27,8 @@ namespace RDB4Scanner {
             DialogResult result = openFileDialog.ShowDialog();
 
             if (result == DialogResult.OK) {
+                loadedLogPath = openFileDialog.FileName;
+
                 try {
                     string selectedFile = Path.GetFileName(openFileDialog.FileName);
                     lblFile.Text = selectedFile;
@@ -33,6 +37,16 @@ namespace RDB4Scanner {
                 } catch (Exception ex) {
                     MessageBox.Show("Something went wrong!\nStack:\n" + ex.Message, "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        // starts the scan:
+        private void btnScan_Click(object sender, EventArgs e) {
+            // this will be deleted:
+            if (!string.IsNullOrEmpty(loadedLogPath)) {
+                MessageBox.Show($"Loaded Log: {loadedLogPath}", "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else {
+                MessageBox.Show("No file loaded!", "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
