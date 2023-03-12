@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "RDB4Scanner/1.0.0": {
+        "runtime": {
+          "RDB4Scanner.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RDB4Scanner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

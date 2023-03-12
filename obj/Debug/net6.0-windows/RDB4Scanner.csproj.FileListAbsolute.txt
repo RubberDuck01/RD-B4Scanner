@@ -1,0 +1,17 @@
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\bin\Debug\net6.0-windows\RDB4Scanner.exe
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\bin\Debug\net6.0-windows\RDB4Scanner.deps.json
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\bin\Debug\net6.0-windows\RDB4Scanner.runtimeconfig.json
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\bin\Debug\net6.0-windows\RDB4Scanner.dll
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\bin\Debug\net6.0-windows\RDB4Scanner.pdb
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.csproj.AssemblyReference.cache
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.FormMain.resources
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.csproj.GenerateResource.cache
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.GeneratedMSBuildEditorConfig.editorconfig
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.AssemblyInfoInputs.cache
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.AssemblyInfo.cs
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.csproj.CoreCompileInputs.cache
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.dll
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\refint\RDB4Scanner.dll
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.pdb
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\RDB4Scanner.genruntimeconfig.cache
+D:\WORK\Coding\Projects\RDB4Scanner\RDB4Scanner\obj\Debug\net6.0-windows\ref\RDB4Scanner.dll

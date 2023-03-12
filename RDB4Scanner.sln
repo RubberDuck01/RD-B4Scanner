@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDB4Scanner", "RDB4Scanner.csproj", "{455CD03F-6770-4F4B-B988-59203FA6141C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{455CD03F-6770-4F4B-B988-59203FA6141C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455CD03F-6770-4F4B-B988-59203FA6141C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455CD03F-6770-4F4B-B988-59203FA6141C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455CD03F-6770-4F4B-B988-59203FA6141C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B9C14CE-1BFC-4142-A360-92BF03A05271}
+	EndGlobalSection
+EndGlobal
