@@ -62,16 +62,19 @@ namespace RDB4Scanner {
         // PLUGINS
         private List<string> Plugins = new List<string>();
 
+        // KNOWN ISSUES (Collective Modding)
+        // hmmm....
+
         // ############################################################
 
         // Constructor:
         // hmmm....
 
         // Get-Set
-        // others (my):
-        // I might add more
+        // known (found) issues:
+        
 
-        // main:
+        // compatibility, fixes, patches, warnings, system (from buffout's crash log):
         public int TotalDetected {
             get { return _totalDetected; }
             set { _totalDetected = value; }
