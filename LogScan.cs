@@ -41,7 +41,7 @@ namespace RDB4Scanner {
                     _scanResults.Add("(Outdated Buffout4!)");
                     NumDetected++;
                 } else {
-                    _scanResults[1] = detectedBuffVer.ToString();
+                    _scanResults.Add(detectedBuffVer.ToString());
                 }
             }
 

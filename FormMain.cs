@@ -8,6 +8,8 @@ namespace RDB4Scanner {
 
         private string loadedLogPath;
         private readonly LogScan _logScanner = new LogScan();
+        private List<string> scanResults = new List<string>();
+
 
         // opens github repo in default browser:
         private void lblGitLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -55,7 +57,7 @@ namespace RDB4Scanner {
         // scanning:
         private void ScanCrashLog(string loadedLogPath) {
             try {
-                List<string> scanResults = _logScanner.ScanLogFile(loadedLogPath);
+                scanResults = _logScanner.ScanLogFile(loadedLogPath);
                 lblMainException.Text = scanResults[0];
                 lblRAMUsage.Text = scanResults[1];
 
