@@ -58,8 +58,8 @@ namespace RDB4Scanner {
         private void ScanCrashLog(string loadedLogPath) {
             try {
                 scanResults = _logScanner.ScanLogFile(loadedLogPath);
-                lblMainException.Text = scanResults[0];
-                lblRAMUsage.Text = scanResults[1];
+                lblGameVer.Text = scanResults[0];
+                lblBuffVer.Text = scanResults[1];
 
             } catch (Exception ex) {
                 MessageBox.Show("Something went wrong!\nStack:\n" + ex.Message, "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Error);

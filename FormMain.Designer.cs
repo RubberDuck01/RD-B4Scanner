@@ -27,6 +27,8 @@
             lblVer = new Label();
             lblRD = new Label();
             gbCrashMsgs = new GroupBox();
+            lblRAMUsage = new Label();
+            lblMainException = new Label();
             lblPrecombines = new Label();
             lblAmmoCounter = new Label();
             lblNPCProjectile = new Label();
@@ -121,10 +123,9 @@
             btnClear = new Button();
             lblFileMsg = new Label();
             lblFile = new Label();
-            lblBuild = new Label();
+            lblGameVer = new Label();
             lblGitLink = new LinkLabel();
-            lblMainException = new Label();
-            lblRAMUsage = new Label();
+            lblBuffVer = new Label();
             gbCrashMsgs.SuspendLayout();
             gbControlsFM.SuspendLayout();
             SuspendLayout();
@@ -249,6 +250,28 @@
             gbCrashMsgs.TabIndex = 2;
             gbCrashMsgs.TabStop = false;
             gbCrashMsgs.Text = "Found Crash Messages";
+            // 
+            // lblRAMUsage
+            // 
+            lblRAMUsage.AutoSize = true;
+            lblRAMUsage.BackColor = Color.Transparent;
+            lblRAMUsage.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRAMUsage.Location = new Point(601, 19);
+            lblRAMUsage.Name = "lblRAMUsage";
+            lblRAMUsage.Size = new Size(81, 19);
+            lblRAMUsage.TabIndex = 85;
+            lblRAMUsage.Text = "[Memory]";
+            // 
+            // lblMainException
+            // 
+            lblMainException.AutoSize = true;
+            lblMainException.BackColor = Color.Transparent;
+            lblMainException.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMainException.Location = new Point(6, 19);
+            lblMainException.Name = "lblMainException";
+            lblMainException.Size = new Size(198, 19);
+            lblMainException.TabIndex = 84;
+            lblMainException.Text = "[Unhandled Exception]";
             // 
             // lblPrecombines
             // 
@@ -1338,17 +1361,18 @@
             lblFile.TabIndex = 5;
             lblFile.Text = "NOT LOADED!";
             // 
-            // lblBuild
+            // lblGameVer
             // 
-            lblBuild.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            lblBuild.AutoSize = true;
-            lblBuild.BackColor = Color.Transparent;
-            lblBuild.Font = new Font("Source Code Pro", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBuild.Location = new Point(644, 12);
-            lblBuild.Name = "lblBuild";
-            lblBuild.Size = new Size(128, 17);
-            lblBuild.TabIndex = 6;
-            lblBuild.Text = "Build: 20230307";
+            lblGameVer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lblGameVer.AutoSize = true;
+            lblGameVer.BackColor = Color.Transparent;
+            lblGameVer.Font = new Font("Source Code Pro", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblGameVer.Location = new Point(613, 9);
+            lblGameVer.Name = "lblGameVer";
+            lblGameVer.Size = new Size(104, 17);
+            lblGameVer.TabIndex = 6;
+            lblGameVer.Text = "Game Version";
+            lblGameVer.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblGitLink
             // 
@@ -1366,27 +1390,18 @@
             lblGitLink.Text = "https://github.com/RubberDuck01/RDB4Scanner";
             lblGitLink.LinkClicked += lblGitLink_LinkClicked;
             // 
-            // lblMainException
+            // lblBuffVer
             // 
-            lblMainException.AutoSize = true;
-            lblMainException.BackColor = Color.Transparent;
-            lblMainException.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMainException.Location = new Point(6, 19);
-            lblMainException.Name = "lblMainException";
-            lblMainException.Size = new Size(198, 19);
-            lblMainException.TabIndex = 84;
-            lblMainException.Text = "[Unhandled Exception]";
-            // 
-            // lblRAMUsage
-            // 
-            lblRAMUsage.AutoSize = true;
-            lblRAMUsage.BackColor = Color.Transparent;
-            lblRAMUsage.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblRAMUsage.Location = new Point(601, 19);
-            lblRAMUsage.Name = "lblRAMUsage";
-            lblRAMUsage.Size = new Size(81, 19);
-            lblRAMUsage.TabIndex = 85;
-            lblRAMUsage.Text = "[Memory]";
+            lblBuffVer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lblBuffVer.AutoSize = true;
+            lblBuffVer.BackColor = Color.Transparent;
+            lblBuffVer.Font = new Font("Source Code Pro", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBuffVer.Location = new Point(613, 26);
+            lblBuffVer.Name = "lblBuffVer";
+            lblBuffVer.Size = new Size(128, 17);
+            lblBuffVer.TabIndex = 7;
+            lblBuffVer.Text = "Buffout Version";
+            lblBuffVer.TextAlign = ContentAlignment.MiddleRight;
             // 
             // FormMain
             // 
@@ -1394,8 +1409,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 661);
+            Controls.Add(lblBuffVer);
             Controls.Add(lblGitLink);
-            Controls.Add(lblBuild);
+            Controls.Add(lblGameVer);
             Controls.Add(lblFile);
             Controls.Add(lblFileMsg);
             Controls.Add(gbControlsFM);
@@ -1516,9 +1532,10 @@
         private Label lblInputMsg;
         private Label lblSaveMsg;
         private Button btnDetails;
-        private Label lblBuild;
+        private Label lblGameVer;
         private LinkLabel lblGitLink;
         private Label lblRAMUsage;
         private Label lblMainException;
+        private Label lblBuffVer;
     }
 }
