@@ -123,6 +123,8 @@
             lblFile = new Label();
             lblBuild = new Label();
             lblGitLink = new LinkLabel();
+            lblMainException = new Label();
+            lblRAMUsage = new Label();
             gbCrashMsgs.SuspendLayout();
             gbControlsFM.SuspendLayout();
             SuspendLayout();
@@ -154,6 +156,8 @@
             // gbCrashMsgs
             // 
             gbCrashMsgs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            gbCrashMsgs.Controls.Add(lblRAMUsage);
+            gbCrashMsgs.Controls.Add(lblMainException);
             gbCrashMsgs.Controls.Add(lblPrecombines);
             gbCrashMsgs.Controls.Add(lblAmmoCounter);
             gbCrashMsgs.Controls.Add(lblNPCProjectile);
@@ -241,7 +245,7 @@
             gbCrashMsgs.Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point);
             gbCrashMsgs.Location = new Point(12, 46);
             gbCrashMsgs.Name = "gbCrashMsgs";
-            gbCrashMsgs.Size = new Size(760, 432);
+            gbCrashMsgs.Size = new Size(760, 464);
             gbCrashMsgs.TabIndex = 2;
             gbCrashMsgs.TabStop = false;
             gbCrashMsgs.Text = "Found Crash Messages";
@@ -252,7 +256,7 @@
             lblPrecombines.AutoSize = true;
             lblPrecombines.BackColor = Color.Transparent;
             lblPrecombines.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecombines.Location = new Point(601, 346);
+            lblPrecombines.Location = new Point(601, 384);
             lblPrecombines.Name = "lblPrecombines";
             lblPrecombines.Size = new Size(153, 19);
             lblPrecombines.TabIndex = 77;
@@ -264,7 +268,7 @@
             lblAmmoCounter.AutoSize = true;
             lblAmmoCounter.BackColor = Color.Transparent;
             lblAmmoCounter.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAmmoCounter.Location = new Point(601, 365);
+            lblAmmoCounter.Location = new Point(601, 403);
             lblAmmoCounter.Name = "lblAmmoCounter";
             lblAmmoCounter.Size = new Size(153, 19);
             lblAmmoCounter.TabIndex = 79;
@@ -276,7 +280,7 @@
             lblNPCProjectile.AutoSize = true;
             lblNPCProjectile.BackColor = Color.Transparent;
             lblNPCProjectile.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNPCProjectile.Location = new Point(601, 384);
+            lblNPCProjectile.Location = new Point(601, 423);
             lblNPCProjectile.Name = "lblNPCProjectile";
             lblNPCProjectile.Size = new Size(153, 19);
             lblNPCProjectile.TabIndex = 81;
@@ -288,7 +292,7 @@
             lblPlayerCharacter.AutoSize = true;
             lblPlayerCharacter.BackColor = Color.Transparent;
             lblPlayerCharacter.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPlayerCharacter.Location = new Point(601, 403);
+            lblPlayerCharacter.Location = new Point(601, 442);
             lblPlayerCharacter.Name = "lblPlayerCharacter";
             lblPlayerCharacter.Size = new Size(153, 19);
             lblPlayerCharacter.TabIndex = 83;
@@ -300,11 +304,11 @@
             lblPlayerCharacterMsg.AutoSize = true;
             lblPlayerCharacterMsg.BackColor = Color.Transparent;
             lblPlayerCharacterMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPlayerCharacterMsg.Location = new Point(393, 403);
+            lblPlayerCharacterMsg.Location = new Point(393, 442);
             lblPlayerCharacterMsg.Name = "lblPlayerCharacterMsg";
-            lblPlayerCharacterMsg.Size = new Size(216, 19);
+            lblPlayerCharacterMsg.Size = new Size(162, 19);
             lblPlayerCharacterMsg.TabIndex = 82;
-            lblPlayerCharacterMsg.Text = "Player Character Crash:";
+            lblPlayerCharacterMsg.Text = "Player Character:";
             // 
             // lblNPCProjectileMsg
             // 
@@ -312,7 +316,7 @@
             lblNPCProjectileMsg.AutoSize = true;
             lblNPCProjectileMsg.BackColor = Color.Transparent;
             lblNPCProjectileMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNPCProjectileMsg.Location = new Point(393, 384);
+            lblNPCProjectileMsg.Location = new Point(393, 423);
             lblNPCProjectileMsg.Name = "lblNPCProjectileMsg";
             lblNPCProjectileMsg.Size = new Size(198, 19);
             lblNPCProjectileMsg.TabIndex = 80;
@@ -324,7 +328,7 @@
             lblAmmoCounterMsg.AutoSize = true;
             lblAmmoCounterMsg.BackColor = Color.Transparent;
             lblAmmoCounterMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAmmoCounterMsg.Location = new Point(393, 365);
+            lblAmmoCounterMsg.Location = new Point(393, 403);
             lblAmmoCounterMsg.Name = "lblAmmoCounterMsg";
             lblAmmoCounterMsg.Size = new Size(180, 19);
             lblAmmoCounterMsg.TabIndex = 78;
@@ -336,7 +340,7 @@
             lblPrecombinesMsg.AutoSize = true;
             lblPrecombinesMsg.BackColor = Color.Transparent;
             lblPrecombinesMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecombinesMsg.Location = new Point(393, 346);
+            lblPrecombinesMsg.Location = new Point(393, 384);
             lblPrecombinesMsg.Name = "lblPrecombinesMsg";
             lblPrecombinesMsg.Size = new Size(171, 19);
             lblPrecombinesMsg.TabIndex = 76;
@@ -348,7 +352,7 @@
             lblNPCPatrol.AutoSize = true;
             lblNPCPatrol.BackColor = Color.Transparent;
             lblNPCPatrol.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNPCPatrol.Location = new Point(601, 327);
+            lblNPCPatrol.Location = new Point(601, 365);
             lblNPCPatrol.Name = "lblNPCPatrol";
             lblNPCPatrol.Size = new Size(153, 19);
             lblNPCPatrol.TabIndex = 75;
@@ -360,7 +364,7 @@
             lblNPCPatrolMsg.AutoSize = true;
             lblNPCPatrolMsg.BackColor = Color.Transparent;
             lblNPCPatrolMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNPCPatrolMsg.Location = new Point(393, 327);
+            lblNPCPatrolMsg.Location = new Point(393, 365);
             lblNPCPatrolMsg.Name = "lblNPCPatrolMsg";
             lblNPCPatrolMsg.Size = new Size(162, 19);
             lblNPCPatrolMsg.TabIndex = 74;
@@ -372,7 +376,7 @@
             lblSave.AutoSize = true;
             lblSave.BackColor = Color.Transparent;
             lblSave.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSave.Location = new Point(601, 270);
+            lblSave.Location = new Point(601, 308);
             lblSave.Name = "lblSave";
             lblSave.Size = new Size(153, 19);
             lblSave.TabIndex = 69;
@@ -384,7 +388,7 @@
             lblInput.AutoSize = true;
             lblInput.BackColor = Color.Transparent;
             lblInput.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInput.Location = new Point(601, 289);
+            lblInput.Location = new Point(601, 327);
             lblInput.Name = "lblInput";
             lblInput.Size = new Size(153, 19);
             lblInput.TabIndex = 71;
@@ -396,7 +400,7 @@
             lblBadIni.AutoSize = true;
             lblBadIni.BackColor = Color.Transparent;
             lblBadIni.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBadIni.Location = new Point(601, 308);
+            lblBadIni.Location = new Point(601, 346);
             lblBadIni.Name = "lblBadIni";
             lblBadIni.Size = new Size(153, 19);
             lblBadIni.TabIndex = 73;
@@ -408,7 +412,7 @@
             lblBadIniMsg.AutoSize = true;
             lblBadIniMsg.BackColor = Color.Transparent;
             lblBadIniMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBadIniMsg.Location = new Point(393, 308);
+            lblBadIniMsg.Location = new Point(393, 346);
             lblBadIniMsg.Name = "lblBadIniMsg";
             lblBadIniMsg.Size = new Size(81, 19);
             lblBadIniMsg.TabIndex = 72;
@@ -420,7 +424,7 @@
             lblInputMsg.AutoSize = true;
             lblInputMsg.BackColor = Color.Transparent;
             lblInputMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInputMsg.Location = new Point(393, 289);
+            lblInputMsg.Location = new Point(393, 327);
             lblInputMsg.Name = "lblInputMsg";
             lblInputMsg.Size = new Size(117, 19);
             lblInputMsg.TabIndex = 70;
@@ -432,7 +436,7 @@
             lblSaveMsg.AutoSize = true;
             lblSaveMsg.BackColor = Color.Transparent;
             lblSaveMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSaveMsg.Location = new Point(393, 270);
+            lblSaveMsg.Location = new Point(393, 308);
             lblSaveMsg.Name = "lblSaveMsg";
             lblSaveMsg.Size = new Size(108, 19);
             lblSaveMsg.TabIndex = 68;
@@ -444,7 +448,7 @@
             lblParticleEffects.AutoSize = true;
             lblParticleEffects.BackColor = Color.Transparent;
             lblParticleEffects.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblParticleEffects.Location = new Point(601, 194);
+            lblParticleEffects.Location = new Point(601, 232);
             lblParticleEffects.Name = "lblParticleEffects";
             lblParticleEffects.Size = new Size(153, 19);
             lblParticleEffects.TabIndex = 61;
@@ -456,7 +460,7 @@
             lblAnimationPhysics.AutoSize = true;
             lblAnimationPhysics.BackColor = Color.Transparent;
             lblAnimationPhysics.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAnimationPhysics.Location = new Point(601, 213);
+            lblAnimationPhysics.Location = new Point(601, 251);
             lblAnimationPhysics.Name = "lblAnimationPhysics";
             lblAnimationPhysics.Size = new Size(153, 19);
             lblAnimationPhysics.TabIndex = 63;
@@ -468,7 +472,7 @@
             lblArchiveInvalid.AutoSize = true;
             lblArchiveInvalid.BackColor = Color.Transparent;
             lblArchiveInvalid.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblArchiveInvalid.Location = new Point(601, 232);
+            lblArchiveInvalid.Location = new Point(601, 270);
             lblArchiveInvalid.Name = "lblArchiveInvalid";
             lblArchiveInvalid.Size = new Size(153, 19);
             lblArchiveInvalid.TabIndex = 65;
@@ -480,7 +484,7 @@
             lblItem.AutoSize = true;
             lblItem.BackColor = Color.Transparent;
             lblItem.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblItem.Location = new Point(601, 251);
+            lblItem.Location = new Point(601, 289);
             lblItem.Name = "lblItem";
             lblItem.Size = new Size(153, 19);
             lblItem.TabIndex = 67;
@@ -492,7 +496,7 @@
             lblItemMsg.AutoSize = true;
             lblItemMsg.BackColor = Color.Transparent;
             lblItemMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblItemMsg.Location = new Point(393, 251);
+            lblItemMsg.Location = new Point(393, 289);
             lblItemMsg.Name = "lblItemMsg";
             lblItemMsg.Size = new Size(108, 19);
             lblItemMsg.TabIndex = 66;
@@ -504,7 +508,7 @@
             lblArchiveInvalidMsg.AutoSize = true;
             lblArchiveInvalidMsg.BackColor = Color.Transparent;
             lblArchiveInvalidMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblArchiveInvalidMsg.Location = new Point(393, 232);
+            lblArchiveInvalidMsg.Location = new Point(393, 270);
             lblArchiveInvalidMsg.Name = "lblArchiveInvalidMsg";
             lblArchiveInvalidMsg.Size = new Size(198, 19);
             lblArchiveInvalidMsg.TabIndex = 64;
@@ -516,7 +520,7 @@
             lblAnimationPhysicsMsg.AutoSize = true;
             lblAnimationPhysicsMsg.BackColor = Color.Transparent;
             lblAnimationPhysicsMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAnimationPhysicsMsg.Location = new Point(393, 213);
+            lblAnimationPhysicsMsg.Location = new Point(393, 251);
             lblAnimationPhysicsMsg.Name = "lblAnimationPhysicsMsg";
             lblAnimationPhysicsMsg.Size = new Size(189, 19);
             lblAnimationPhysicsMsg.TabIndex = 62;
@@ -528,11 +532,11 @@
             lblParticleEffectsMsg.AutoSize = true;
             lblParticleEffectsMsg.BackColor = Color.Transparent;
             lblParticleEffectsMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblParticleEffectsMsg.Location = new Point(393, 194);
+            lblParticleEffectsMsg.Location = new Point(393, 232);
             lblParticleEffectsMsg.Name = "lblParticleEffectsMsg";
-            lblParticleEffectsMsg.Size = new Size(216, 19);
+            lblParticleEffectsMsg.Size = new Size(162, 19);
             lblParticleEffectsMsg.TabIndex = 60;
-            lblParticleEffectsMsg.Text = "Particle Effects Crash:";
+            lblParticleEffectsMsg.Text = "Particle Effects:";
             // 
             // lblConsoleCommand
             // 
@@ -540,7 +544,7 @@
             lblConsoleCommand.AutoSize = true;
             lblConsoleCommand.BackColor = Color.Transparent;
             lblConsoleCommand.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblConsoleCommand.Location = new Point(601, 175);
+            lblConsoleCommand.Location = new Point(601, 213);
             lblConsoleCommand.Name = "lblConsoleCommand";
             lblConsoleCommand.Size = new Size(153, 19);
             lblConsoleCommand.TabIndex = 59;
@@ -552,7 +556,7 @@
             lblConsoleCommandMsg.AutoSize = true;
             lblConsoleCommandMsg.BackColor = Color.Transparent;
             lblConsoleCommandMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblConsoleCommandMsg.Location = new Point(393, 175);
+            lblConsoleCommandMsg.Location = new Point(393, 213);
             lblConsoleCommandMsg.Name = "lblConsoleCommandMsg";
             lblConsoleCommandMsg.Size = new Size(207, 19);
             lblConsoleCommandMsg.TabIndex = 58;
@@ -564,7 +568,7 @@
             lblNvidiaDriver.AutoSize = true;
             lblNvidiaDriver.BackColor = Color.Transparent;
             lblNvidiaDriver.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNvidiaDriver.Location = new Point(601, 99);
+            lblNvidiaDriver.Location = new Point(601, 137);
             lblNvidiaDriver.Name = "lblNvidiaDriver";
             lblNvidiaDriver.Size = new Size(153, 19);
             lblNvidiaDriver.TabIndex = 51;
@@ -576,7 +580,7 @@
             lblVulkanMem.AutoSize = true;
             lblVulkanMem.BackColor = Color.Transparent;
             lblVulkanMem.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblVulkanMem.Location = new Point(601, 118);
+            lblVulkanMem.Location = new Point(601, 156);
             lblVulkanMem.Name = "lblVulkanMem";
             lblVulkanMem.Size = new Size(153, 19);
             lblVulkanMem.TabIndex = 53;
@@ -588,7 +592,7 @@
             lblVulkanSettings.AutoSize = true;
             lblVulkanSettings.BackColor = Color.Transparent;
             lblVulkanSettings.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblVulkanSettings.Location = new Point(601, 137);
+            lblVulkanSettings.Location = new Point(601, 175);
             lblVulkanSettings.Name = "lblVulkanSettings";
             lblVulkanSettings.Size = new Size(153, 19);
             lblVulkanSettings.TabIndex = 55;
@@ -600,7 +604,7 @@
             lblCorruptAudio.AutoSize = true;
             lblCorruptAudio.BackColor = Color.Transparent;
             lblCorruptAudio.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCorruptAudio.Location = new Point(601, 156);
+            lblCorruptAudio.Location = new Point(601, 194);
             lblCorruptAudio.Name = "lblCorruptAudio";
             lblCorruptAudio.Size = new Size(153, 19);
             lblCorruptAudio.TabIndex = 57;
@@ -612,7 +616,7 @@
             lblCorruptAudioMsg.AutoSize = true;
             lblCorruptAudioMsg.BackColor = Color.Transparent;
             lblCorruptAudioMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCorruptAudioMsg.Location = new Point(393, 156);
+            lblCorruptAudioMsg.Location = new Point(393, 194);
             lblCorruptAudioMsg.Name = "lblCorruptAudioMsg";
             lblCorruptAudioMsg.Size = new Size(153, 19);
             lblCorruptAudioMsg.TabIndex = 56;
@@ -624,7 +628,7 @@
             lblVulkanSettingsMsg.AutoSize = true;
             lblVulkanSettingsMsg.BackColor = Color.Transparent;
             lblVulkanSettingsMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblVulkanSettingsMsg.Location = new Point(393, 137);
+            lblVulkanSettingsMsg.Location = new Point(393, 175);
             lblVulkanSettingsMsg.Name = "lblVulkanSettingsMsg";
             lblVulkanSettingsMsg.Size = new Size(153, 19);
             lblVulkanSettingsMsg.TabIndex = 54;
@@ -636,7 +640,7 @@
             lblVulkanMemMsg.AutoSize = true;
             lblVulkanMemMsg.BackColor = Color.Transparent;
             lblVulkanMemMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblVulkanMemMsg.Location = new Point(393, 118);
+            lblVulkanMemMsg.Location = new Point(393, 156);
             lblVulkanMemMsg.Name = "lblVulkanMemMsg";
             lblVulkanMemMsg.Size = new Size(135, 19);
             lblVulkanMemMsg.TabIndex = 52;
@@ -648,7 +652,7 @@
             lblNvidiaDriverMsg.AutoSize = true;
             lblNvidiaDriverMsg.BackColor = Color.Transparent;
             lblNvidiaDriverMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNvidiaDriverMsg.Location = new Point(393, 99);
+            lblNvidiaDriverMsg.Location = new Point(393, 137);
             lblNvidiaDriverMsg.Name = "lblNvidiaDriverMsg";
             lblNvidiaDriverMsg.Size = new Size(189, 19);
             lblNvidiaDriverMsg.TabIndex = 50;
@@ -660,7 +664,7 @@
             lblPluginLimit.AutoSize = true;
             lblPluginLimit.BackColor = Color.Transparent;
             lblPluginLimit.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPluginLimit.Location = new Point(601, 23);
+            lblPluginLimit.Location = new Point(601, 61);
             lblPluginLimit.Name = "lblPluginLimit";
             lblPluginLimit.Size = new Size(153, 19);
             lblPluginLimit.TabIndex = 43;
@@ -672,7 +676,7 @@
             lblPluginOrder.AutoSize = true;
             lblPluginOrder.BackColor = Color.Transparent;
             lblPluginOrder.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPluginOrder.Location = new Point(601, 42);
+            lblPluginOrder.Location = new Point(601, 80);
             lblPluginOrder.Name = "lblPluginOrder";
             lblPluginOrder.Size = new Size(153, 19);
             lblPluginOrder.TabIndex = 45;
@@ -684,7 +688,7 @@
             lblMO2Extractor.AutoSize = true;
             lblMO2Extractor.BackColor = Color.Transparent;
             lblMO2Extractor.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMO2Extractor.Location = new Point(601, 61);
+            lblMO2Extractor.Location = new Point(601, 99);
             lblMO2Extractor.Name = "lblMO2Extractor";
             lblMO2Extractor.Size = new Size(153, 19);
             lblMO2Extractor.TabIndex = 47;
@@ -696,7 +700,7 @@
             lblNvidiaDebris.AutoSize = true;
             lblNvidiaDebris.BackColor = Color.Transparent;
             lblNvidiaDebris.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNvidiaDebris.Location = new Point(601, 80);
+            lblNvidiaDebris.Location = new Point(601, 118);
             lblNvidiaDebris.Name = "lblNvidiaDebris";
             lblNvidiaDebris.Size = new Size(153, 19);
             lblNvidiaDebris.TabIndex = 49;
@@ -708,7 +712,7 @@
             lblNvidiaDebrisMsg.AutoSize = true;
             lblNvidiaDebrisMsg.BackColor = Color.Transparent;
             lblNvidiaDebrisMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNvidiaDebrisMsg.Location = new Point(393, 80);
+            lblNvidiaDebrisMsg.Location = new Point(393, 118);
             lblNvidiaDebrisMsg.Name = "lblNvidiaDebrisMsg";
             lblNvidiaDebrisMsg.Size = new Size(189, 19);
             lblNvidiaDebrisMsg.TabIndex = 48;
@@ -720,7 +724,7 @@
             lblMO2ExtractorMsg.AutoSize = true;
             lblMO2ExtractorMsg.BackColor = Color.Transparent;
             lblMO2ExtractorMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMO2ExtractorMsg.Location = new Point(393, 61);
+            lblMO2ExtractorMsg.Location = new Point(393, 99);
             lblMO2ExtractorMsg.Name = "lblMO2ExtractorMsg";
             lblMO2ExtractorMsg.Size = new Size(135, 19);
             lblMO2ExtractorMsg.TabIndex = 46;
@@ -732,7 +736,7 @@
             lblPluginOrderMsg.AutoSize = true;
             lblPluginOrderMsg.BackColor = Color.Transparent;
             lblPluginOrderMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPluginOrderMsg.Location = new Point(393, 42);
+            lblPluginOrderMsg.Location = new Point(393, 80);
             lblPluginOrderMsg.Name = "lblPluginOrderMsg";
             lblPluginOrderMsg.Size = new Size(126, 19);
             lblPluginOrderMsg.TabIndex = 44;
@@ -744,7 +748,7 @@
             lblPluginLimitMsg.AutoSize = true;
             lblPluginLimitMsg.BackColor = Color.Transparent;
             lblPluginLimitMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPluginLimitMsg.Location = new Point(393, 23);
+            lblPluginLimitMsg.Location = new Point(393, 61);
             lblPluginLimitMsg.Name = "lblPluginLimitMsg";
             lblPluginLimitMsg.Size = new Size(126, 19);
             lblPluginLimitMsg.TabIndex = 42;
@@ -755,7 +759,7 @@
             lblBodyPhysics.AutoSize = true;
             lblBodyPhysics.BackColor = Color.Transparent;
             lblBodyPhysics.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBodyPhysics.Location = new Point(214, 403);
+            lblBodyPhysics.Location = new Point(214, 442);
             lblBodyPhysics.Name = "lblBodyPhysics";
             lblBodyPhysics.Size = new Size(153, 19);
             lblBodyPhysics.TabIndex = 41;
@@ -766,7 +770,7 @@
             lblStackOverflow.AutoSize = true;
             lblStackOverflow.BackColor = Color.Transparent;
             lblStackOverflow.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStackOverflow.Location = new Point(214, 23);
+            lblStackOverflow.Location = new Point(214, 61);
             lblStackOverflow.Name = "lblStackOverflow";
             lblStackOverflow.Size = new Size(153, 19);
             lblStackOverflow.TabIndex = 1;
@@ -777,7 +781,7 @@
             lblActiveEffects.AutoSize = true;
             lblActiveEffects.BackColor = Color.Transparent;
             lblActiveEffects.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblActiveEffects.Location = new Point(214, 42);
+            lblActiveEffects.Location = new Point(214, 80);
             lblActiveEffects.Name = "lblActiveEffects";
             lblActiveEffects.Size = new Size(153, 19);
             lblActiveEffects.TabIndex = 3;
@@ -788,7 +792,7 @@
             lblBadMath.AutoSize = true;
             lblBadMath.BackColor = Color.Transparent;
             lblBadMath.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBadMath.Location = new Point(214, 61);
+            lblBadMath.Location = new Point(214, 99);
             lblBadMath.Name = "lblBadMath";
             lblBadMath.Size = new Size(153, 19);
             lblBadMath.TabIndex = 5;
@@ -799,7 +803,7 @@
             lblBodyPhysicsMsg.AutoSize = true;
             lblBodyPhysicsMsg.BackColor = Color.Transparent;
             lblBodyPhysicsMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBodyPhysicsMsg.Location = new Point(6, 403);
+            lblBodyPhysicsMsg.Location = new Point(6, 442);
             lblBodyPhysicsMsg.Name = "lblBodyPhysicsMsg";
             lblBodyPhysicsMsg.Size = new Size(126, 19);
             lblBodyPhysicsMsg.TabIndex = 40;
@@ -810,7 +814,7 @@
             lblAudio.AutoSize = true;
             lblAudio.BackColor = Color.Transparent;
             lblAudio.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAudio.Location = new Point(214, 384);
+            lblAudio.Location = new Point(214, 423);
             lblAudio.Name = "lblAudio";
             lblAudio.Size = new Size(153, 19);
             lblAudio.TabIndex = 39;
@@ -821,7 +825,7 @@
             lblAudioMsg.AutoSize = true;
             lblAudioMsg.BackColor = Color.Transparent;
             lblAudioMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAudioMsg.Location = new Point(6, 384);
+            lblAudioMsg.Location = new Point(6, 423);
             lblAudioMsg.Name = "lblAudioMsg";
             lblAudioMsg.Size = new Size(126, 19);
             lblAudioMsg.TabIndex = 38;
@@ -832,7 +836,7 @@
             lblNull.AutoSize = true;
             lblNull.BackColor = Color.Transparent;
             lblNull.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNull.Location = new Point(214, 80);
+            lblNull.Location = new Point(214, 118);
             lblNull.Name = "lblNull";
             lblNull.Size = new Size(153, 19);
             lblNull.TabIndex = 7;
@@ -843,7 +847,7 @@
             lblNPCPathMsg.AutoSize = true;
             lblNPCPathMsg.BackColor = Color.Transparent;
             lblNPCPathMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNPCPathMsg.Location = new Point(6, 365);
+            lblNPCPathMsg.Location = new Point(6, 403);
             lblNPCPathMsg.Name = "lblNPCPathMsg";
             lblNPCPathMsg.Size = new Size(117, 19);
             lblNPCPathMsg.TabIndex = 36;
@@ -854,7 +858,7 @@
             lblDLL.AutoSize = true;
             lblDLL.BackColor = Color.Transparent;
             lblDLL.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDLL.Location = new Point(214, 99);
+            lblDLL.Location = new Point(214, 137);
             lblDLL.Name = "lblDLL";
             lblDLL.Size = new Size(153, 19);
             lblDLL.TabIndex = 9;
@@ -865,7 +869,7 @@
             lblBitDefenderMsg.AutoSize = true;
             lblBitDefenderMsg.BackColor = Color.Transparent;
             lblBitDefenderMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBitDefenderMsg.Location = new Point(6, 346);
+            lblBitDefenderMsg.Location = new Point(6, 384);
             lblBitDefenderMsg.Name = "lblBitDefenderMsg";
             lblBitDefenderMsg.Size = new Size(117, 19);
             lblBitDefenderMsg.TabIndex = 34;
@@ -876,7 +880,7 @@
             lblNPCPath.AutoSize = true;
             lblNPCPath.BackColor = Color.Transparent;
             lblNPCPath.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNPCPath.Location = new Point(214, 365);
+            lblNPCPath.Location = new Point(214, 403);
             lblNPCPath.Name = "lblNPCPath";
             lblNPCPath.Size = new Size(153, 19);
             lblNPCPath.TabIndex = 37;
@@ -887,7 +891,7 @@
             lblBGSMMsg.AutoSize = true;
             lblBGSMMsg.BackColor = Color.Transparent;
             lblBGSMMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBGSMMsg.Location = new Point(6, 327);
+            lblBGSMMsg.Location = new Point(6, 365);
             lblBGSMMsg.Name = "lblBGSMMsg";
             lblBGSMMsg.Size = new Size(153, 19);
             lblBGSMMsg.TabIndex = 32;
@@ -898,7 +902,7 @@
             lblLOD.AutoSize = true;
             lblLOD.BackColor = Color.Transparent;
             lblLOD.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLOD.Location = new Point(214, 118);
+            lblLOD.Location = new Point(214, 156);
             lblLOD.Name = "lblLOD";
             lblLOD.Size = new Size(153, 19);
             lblLOD.TabIndex = 11;
@@ -909,7 +913,7 @@
             lblDDSMsg.AutoSize = true;
             lblDDSMsg.BackColor = Color.Transparent;
             lblDDSMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDDSMsg.Location = new Point(6, 308);
+            lblDDSMsg.Location = new Point(6, 346);
             lblDDSMsg.Name = "lblDDSMsg";
             lblDDSMsg.Size = new Size(135, 19);
             lblDDSMsg.TabIndex = 30;
@@ -920,7 +924,7 @@
             lblMCM.AutoSize = true;
             lblMCM.BackColor = Color.Transparent;
             lblMCM.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMCM.Location = new Point(214, 137);
+            lblMCM.Location = new Point(214, 175);
             lblMCM.Name = "lblMCM";
             lblMCM.Size = new Size(153, 19);
             lblMCM.TabIndex = 13;
@@ -931,7 +935,7 @@
             lblNIFMsg.AutoSize = true;
             lblNIFMsg.BackColor = Color.Transparent;
             lblNIFMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNIFMsg.Location = new Point(6, 289);
+            lblNIFMsg.Location = new Point(6, 327);
             lblNIFMsg.Name = "lblNIFMsg";
             lblNIFMsg.Size = new Size(108, 19);
             lblNIFMsg.TabIndex = 28;
@@ -942,7 +946,7 @@
             lblBitDefender.AutoSize = true;
             lblBitDefender.BackColor = Color.Transparent;
             lblBitDefender.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBitDefender.Location = new Point(214, 346);
+            lblBitDefender.Location = new Point(214, 384);
             lblBitDefender.Name = "lblBitDefender";
             lblBitDefender.Size = new Size(153, 19);
             lblBitDefender.TabIndex = 35;
@@ -953,7 +957,7 @@
             lblGridMsg.AutoSize = true;
             lblGridMsg.BackColor = Color.Transparent;
             lblGridMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblGridMsg.Location = new Point(6, 270);
+            lblGridMsg.Location = new Point(6, 308);
             lblGridMsg.Name = "lblGridMsg";
             lblGridMsg.Size = new Size(108, 19);
             lblGridMsg.TabIndex = 26;
@@ -964,7 +968,7 @@
             lblDecal.AutoSize = true;
             lblDecal.BackColor = Color.Transparent;
             lblDecal.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDecal.Location = new Point(214, 156);
+            lblDecal.Location = new Point(214, 194);
             lblDecal.Name = "lblDecal";
             lblDecal.Size = new Size(153, 19);
             lblDecal.TabIndex = 15;
@@ -975,7 +979,7 @@
             lblRenderingMsg.AutoSize = true;
             lblRenderingMsg.BackColor = Color.Transparent;
             lblRenderingMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblRenderingMsg.Location = new Point(6, 251);
+            lblRenderingMsg.Location = new Point(6, 289);
             lblRenderingMsg.Name = "lblRenderingMsg";
             lblRenderingMsg.Size = new Size(126, 19);
             lblRenderingMsg.TabIndex = 24;
@@ -986,7 +990,7 @@
             lblEquip.AutoSize = true;
             lblEquip.BackColor = Color.Transparent;
             lblEquip.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEquip.Location = new Point(214, 175);
+            lblEquip.Location = new Point(214, 213);
             lblEquip.Name = "lblEquip";
             lblEquip.Size = new Size(153, 19);
             lblEquip.TabIndex = 17;
@@ -997,7 +1001,7 @@
             lblArchivesMsg.AutoSize = true;
             lblArchivesMsg.BackColor = Color.Transparent;
             lblArchivesMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblArchivesMsg.Location = new Point(6, 232);
+            lblArchivesMsg.Location = new Point(6, 270);
             lblArchivesMsg.Name = "lblArchivesMsg";
             lblArchivesMsg.Size = new Size(99, 19);
             lblArchivesMsg.TabIndex = 22;
@@ -1008,7 +1012,7 @@
             lblBGSM.AutoSize = true;
             lblBGSM.BackColor = Color.Transparent;
             lblBGSM.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBGSM.Location = new Point(214, 327);
+            lblBGSM.Location = new Point(214, 365);
             lblBGSM.Name = "lblBGSM";
             lblBGSM.Size = new Size(153, 19);
             lblBGSM.TabIndex = 33;
@@ -1019,7 +1023,7 @@
             lblGenericMsg.AutoSize = true;
             lblGenericMsg.BackColor = Color.Transparent;
             lblGenericMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblGenericMsg.Location = new Point(6, 213);
+            lblGenericMsg.Location = new Point(6, 251);
             lblGenericMsg.Name = "lblGenericMsg";
             lblGenericMsg.Size = new Size(135, 19);
             lblGenericMsg.TabIndex = 20;
@@ -1030,7 +1034,7 @@
             lblScript.AutoSize = true;
             lblScript.BackColor = Color.Transparent;
             lblScript.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblScript.Location = new Point(214, 194);
+            lblScript.Location = new Point(214, 232);
             lblScript.Name = "lblScript";
             lblScript.Size = new Size(153, 19);
             lblScript.TabIndex = 19;
@@ -1041,7 +1045,7 @@
             lblScriptMsg.AutoSize = true;
             lblScriptMsg.BackColor = Color.Transparent;
             lblScriptMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblScriptMsg.Location = new Point(6, 194);
+            lblScriptMsg.Location = new Point(6, 232);
             lblScriptMsg.Name = "lblScriptMsg";
             lblScriptMsg.Size = new Size(126, 19);
             lblScriptMsg.TabIndex = 18;
@@ -1052,7 +1056,7 @@
             lblGeneric.AutoSize = true;
             lblGeneric.BackColor = Color.Transparent;
             lblGeneric.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblGeneric.Location = new Point(214, 213);
+            lblGeneric.Location = new Point(214, 251);
             lblGeneric.Name = "lblGeneric";
             lblGeneric.Size = new Size(153, 19);
             lblGeneric.TabIndex = 21;
@@ -1063,7 +1067,7 @@
             lblEquipMsg.AutoSize = true;
             lblEquipMsg.BackColor = Color.Transparent;
             lblEquipMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEquipMsg.Location = new Point(6, 175);
+            lblEquipMsg.Location = new Point(6, 213);
             lblEquipMsg.Name = "lblEquipMsg";
             lblEquipMsg.Size = new Size(117, 19);
             lblEquipMsg.TabIndex = 16;
@@ -1074,7 +1078,7 @@
             lblDDS.AutoSize = true;
             lblDDS.BackColor = Color.Transparent;
             lblDDS.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDDS.Location = new Point(214, 308);
+            lblDDS.Location = new Point(214, 346);
             lblDDS.Name = "lblDDS";
             lblDDS.Size = new Size(153, 19);
             lblDDS.TabIndex = 31;
@@ -1085,7 +1089,7 @@
             lblDecalMsg.AutoSize = true;
             lblDecalMsg.BackColor = Color.Transparent;
             lblDecalMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDecalMsg.Location = new Point(6, 156);
+            lblDecalMsg.Location = new Point(6, 194);
             lblDecalMsg.Name = "lblDecalMsg";
             lblDecalMsg.Size = new Size(117, 19);
             lblDecalMsg.TabIndex = 14;
@@ -1096,7 +1100,7 @@
             lblArchives.AutoSize = true;
             lblArchives.BackColor = Color.Transparent;
             lblArchives.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblArchives.Location = new Point(214, 232);
+            lblArchives.Location = new Point(214, 270);
             lblArchives.Name = "lblArchives";
             lblArchives.Size = new Size(153, 19);
             lblArchives.TabIndex = 23;
@@ -1107,7 +1111,7 @@
             lblMCMMsg.AutoSize = true;
             lblMCMMsg.BackColor = Color.Transparent;
             lblMCMMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMCMMsg.Location = new Point(6, 137);
+            lblMCMMsg.Location = new Point(6, 175);
             lblMCMMsg.Name = "lblMCMMsg";
             lblMCMMsg.Size = new Size(99, 19);
             lblMCMMsg.TabIndex = 12;
@@ -1118,7 +1122,7 @@
             lblRendering.AutoSize = true;
             lblRendering.BackColor = Color.Transparent;
             lblRendering.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblRendering.Location = new Point(214, 251);
+            lblRendering.Location = new Point(214, 289);
             lblRendering.Name = "lblRendering";
             lblRendering.Size = new Size(153, 19);
             lblRendering.TabIndex = 25;
@@ -1129,7 +1133,7 @@
             lblLODMsg.AutoSize = true;
             lblLODMsg.BackColor = Color.Transparent;
             lblLODMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLODMsg.Location = new Point(6, 118);
+            lblLODMsg.Location = new Point(6, 156);
             lblLODMsg.Name = "lblLODMsg";
             lblLODMsg.Size = new Size(99, 19);
             lblLODMsg.TabIndex = 10;
@@ -1140,7 +1144,7 @@
             lblNIF.AutoSize = true;
             lblNIF.BackColor = Color.Transparent;
             lblNIF.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNIF.Location = new Point(214, 289);
+            lblNIF.Location = new Point(214, 327);
             lblNIF.Name = "lblNIF";
             lblNIF.Size = new Size(153, 19);
             lblNIF.TabIndex = 29;
@@ -1151,7 +1155,7 @@
             lblDLLMsg.AutoSize = true;
             lblDLLMsg.BackColor = Color.Transparent;
             lblDLLMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDLLMsg.Location = new Point(6, 99);
+            lblDLLMsg.Location = new Point(6, 137);
             lblDLLMsg.Name = "lblDLLMsg";
             lblDLLMsg.Size = new Size(99, 19);
             lblDLLMsg.TabIndex = 8;
@@ -1162,7 +1166,7 @@
             lblGrid.AutoSize = true;
             lblGrid.BackColor = Color.Transparent;
             lblGrid.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblGrid.Location = new Point(214, 270);
+            lblGrid.Location = new Point(214, 308);
             lblGrid.Name = "lblGrid";
             lblGrid.Size = new Size(153, 19);
             lblGrid.TabIndex = 27;
@@ -1173,7 +1177,7 @@
             lblNullMsg.AutoSize = true;
             lblNullMsg.BackColor = Color.Transparent;
             lblNullMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNullMsg.Location = new Point(6, 80);
+            lblNullMsg.Location = new Point(6, 118);
             lblNullMsg.Name = "lblNullMsg";
             lblNullMsg.Size = new Size(108, 19);
             lblNullMsg.TabIndex = 6;
@@ -1184,7 +1188,7 @@
             lblBadMathMsg.AutoSize = true;
             lblBadMathMsg.BackColor = Color.Transparent;
             lblBadMathMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblBadMathMsg.Location = new Point(6, 61);
+            lblBadMathMsg.Location = new Point(6, 99);
             lblBadMathMsg.Name = "lblBadMathMsg";
             lblBadMathMsg.Size = new Size(90, 19);
             lblBadMathMsg.TabIndex = 4;
@@ -1195,7 +1199,7 @@
             lblAEMsg.AutoSize = true;
             lblAEMsg.BackColor = Color.Transparent;
             lblAEMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAEMsg.Location = new Point(6, 42);
+            lblAEMsg.Location = new Point(6, 80);
             lblAEMsg.Name = "lblAEMsg";
             lblAEMsg.Size = new Size(144, 19);
             lblAEMsg.TabIndex = 2;
@@ -1206,7 +1210,7 @@
             lblStackMsg.AutoSize = true;
             lblStackMsg.BackColor = Color.Transparent;
             lblStackMsg.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStackMsg.Location = new Point(6, 23);
+            lblStackMsg.Location = new Point(6, 61);
             lblStackMsg.Name = "lblStackMsg";
             lblStackMsg.Size = new Size(144, 19);
             lblStackMsg.TabIndex = 0;
@@ -1223,7 +1227,7 @@
             gbControlsFM.Controls.Add(pbProgress);
             gbControlsFM.Controls.Add(btnClear);
             gbControlsFM.Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            gbControlsFM.Location = new Point(12, 484);
+            gbControlsFM.Location = new Point(12, 516);
             gbControlsFM.Name = "gbControlsFM";
             gbControlsFM.Size = new Size(760, 116);
             gbControlsFM.TabIndex = 3;
@@ -1362,6 +1366,28 @@
             lblGitLink.Text = "https://github.com/RubberDuck01/RDB4Scanner";
             lblGitLink.LinkClicked += lblGitLink_LinkClicked;
             // 
+            // lblMainException
+            // 
+            lblMainException.AutoSize = true;
+            lblMainException.BackColor = Color.Transparent;
+            lblMainException.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMainException.Location = new Point(6, 19);
+            lblMainException.Name = "lblMainException";
+            lblMainException.Size = new Size(198, 19);
+            lblMainException.TabIndex = 84;
+            lblMainException.Text = "[Unhandled Exception]";
+            // 
+            // lblRAMUsage
+            // 
+            lblRAMUsage.AutoSize = true;
+            lblRAMUsage.BackColor = Color.Transparent;
+            lblRAMUsage.Font = new Font("Source Code Pro", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRAMUsage.Location = new Point(601, 19);
+            lblRAMUsage.Name = "lblRAMUsage";
+            lblRAMUsage.Size = new Size(81, 19);
+            lblRAMUsage.TabIndex = 85;
+            lblRAMUsage.Text = "[Memory]";
+            // 
             // FormMain
             // 
             AllowDrop = true;
@@ -1492,5 +1518,7 @@
         private Button btnDetails;
         private Label lblBuild;
         private LinkLabel lblGitLink;
+        private Label lblRAMUsage;
+        private Label lblMainException;
     }
 }

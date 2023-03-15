@@ -7,6 +7,7 @@ namespace RDB4Scanner {
         }
 
         private string loadedLogPath;
+        private readonly LogScan _logScanner = new LogScan();
 
         // opens github repo in default browser:
         private void lblGitLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -44,9 +45,22 @@ namespace RDB4Scanner {
         private void btnScan_Click(object sender, EventArgs e) {
             // this will be deleted:
             if (!string.IsNullOrEmpty(loadedLogPath)) {
-                MessageBox.Show($"Loaded Log: {loadedLogPath}", "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // MessageBox.Show($"Loaded Log: {loadedLogPath}", "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ScanCrashLog(loadedLogPath);
             } else {
-                MessageBox.Show("No file loaded!", "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("FATAL: No file loaded!\n\nUse 'Load...' button to load your crash log.", "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // scanning:
+        private void ScanCrashLog(string loadedLogPath) {
+            try {
+                List<string> scanResults = _logScanner.ScanLogFile(loadedLogPath);
+                lblMainException.Text = scanResults[0];
+                lblRAMUsage.Text = scanResults[1];
+
+            } catch (Exception ex) {
+                MessageBox.Show("Something went wrong!\nStack:\n" + ex.Message, "RD's B4Scanner", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
